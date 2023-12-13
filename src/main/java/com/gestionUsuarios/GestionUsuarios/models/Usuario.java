@@ -2,6 +2,8 @@ package com.gestionUsuarios.GestionUsuarios.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -15,6 +17,7 @@ public class Usuario {
     // acceder a ellas con getters y setters.
     @Getter @Setter @Column(name = "id")
     @Id // primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // hibernate no se da cuenta que hace referencia a una columna. Entonces lo especificamos.
